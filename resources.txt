@@ -1,0 +1,1 @@
+#This file contain the resources steps and other details identified during the script creation
