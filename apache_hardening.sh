@@ -18,3 +18,9 @@ cp /etc/httpd/conf/httpd.conf ~/httpd.conf.backup
 echo "Remove server banner version"
 sed -i "$a ServerTokens Prod" /etc/httpd/conf/httpd.conf
 sed -i "$a ServerSignature Off" /etc/httpd/conf/httpd.conf
+
+##Disable directory browsing
+sed -i 's/Options Indexes FollowSymLinks/Options -Indexes FollowSymLinks/g' /etc/httpd/conf/httpd.conf
+
+#Restart the apache for apply the configuratio changes
+systemctl restart httpd
