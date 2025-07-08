@@ -11,5 +11,10 @@ systemctl enable httpd
 systemctl start httpd
 
 ###Begin hardening steps###
-#
-
+## create a backup of configuration file
+echo "Creating a backup of configuration file"
+cp /etc/httpd/conf/httpd.conf ~/httpd.conf.backup
+#Remove Server Banner Version
+echo "Remove server banner version"
+sed -i "$a ServerTokens Prod" /etc/httpd/conf/httpd.conf
+sed -i "$a ServerSignature Off" /etc/httpd/conf/httpd.conf
