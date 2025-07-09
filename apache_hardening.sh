@@ -25,5 +25,7 @@ sed -i 's/Options Indexes FollowSymLinks/Options -Indexes FollowSymLinks/g' /etc
 ##Add Etag to prevent obtaining sensitive information through etag headers.
 sed -i "$a FileETag None" /etc/httpd/conf/httpd.conf
 
+## Change permission to conf folder
+sudo chmod -R 750 /etc/httpd/conf
 #Restart the apache for apply the configuratio changes
 systemctl restart httpd
