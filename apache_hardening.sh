@@ -22,5 +22,8 @@ sed -i "$a ServerSignature Off" /etc/httpd/conf/httpd.conf
 ##Disable directory browsing
 sed -i 's/Options Indexes FollowSymLinks/Options -Indexes FollowSymLinks/g' /etc/httpd/conf/httpd.conf
 
+##Add Etag to prevent obtaining sensitive information through etag headers.
+sed -i "$a FileETag None" /etc/httpd/conf/httpd.conf
+
 #Restart the apache for apply the configuratio changes
 systemctl restart httpd
