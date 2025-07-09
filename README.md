@@ -11,3 +11,17 @@ By running this script you will be able to achieve the followings.
 - CentOS Stream 10
 - Root or sudo privileges
 - Internet connectivity for the server (For install the Apache)
+
+## How to use this script
+```Bash
+#Clone the repository and go inside of the repository
+git clone https://github.com/Ruwanc/Apache-Hardening-Script.git
+cd Apache-Hardening-Script
+chmod u+x apache_hardening.sh
+sudo ./apache_hardening.sh
+
+```
+
+## Hardening Steps
+1. Remove Server banner version and OS details
+2. Disable directory browsing
